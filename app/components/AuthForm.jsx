@@ -44,7 +44,7 @@ export default function AuthForm() {
         supabaseClient={supabase}
         view="magic_link"
         showLinks={false}
-        providers={["google"]}
+        providers={["google", "github"]}
         redirectTo="http://localhost:3000/auth/callback"
         appearance={{ theme: customTheme }}
         theme="dark"
