@@ -1,19 +1,20 @@
 import AuthForm from "./components/AuthForm";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-300">
-      <div className="container mx-auto p-6 sm:p-12">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
-          Welcome to Watch List
-        </h1>
-        <p className="text-lg md:text-xl text-white mb-6">
-          Your personal space to curate and manage a wishlist of your favorite
-          watches. Sign in to create, view, edit, and delete items from your
-          watchlist.
-        </p>
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <AuthForm />
+    <div className="min-h-screen bg-[#f2f2f2] text-gray-300 font-sans">
+      <div className="w-full mx-auto p-0 h-[100vh]">
+        <div className="bg-[#f2f2f2] flex h-full">
+          <div className="hidden w-[50%] md:block bg-[url('/bg-photo.jpg')] bg-cover bg-no-repeat bg-center"></div>
+          <div className="flex w-full md:w-[50%] p-12 justify-center items-center">
+            <div className="w-[100%] md:w-[80%]">
+              <h1 className="text-5xl md:text-6xl font-extrabold text-gray-700 mb-6">
+                Welcome to Watch List
+              </h1>
+              <AuthForm />
+            </div>
+          </div>
         </div>
       </div>
     </div>
