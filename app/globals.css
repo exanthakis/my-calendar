@@ -1,4 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100&family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gabarito&family=Yellowtail&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --custom-color: #fff;
+  --custom-color-brand: #152b32;
+}
+
+.c-bOcPnF-cmFMMs-color-primary {
+  font-family: "Gabarito", sans-serif !important;
+  background-color: var(--custom-color-brand) !important;
+  border-color: inherit !important;
+  border-radius: 30px !important;
+}
+
+.supabase-auth-ui_ui-button.c-bOcPnF-iwjZXY-color-default,
+.supabase-auth-ui_ui-input {
+  font-family: "Gabarito", sans-serif !important;
+  background-color: var(--custom-color) !important;
+  color: var(--custom-color-brand) !important;
+  border-color: var(--custom-color-brand) !important;
+  border-radius: 30px !important;
+  border-width: 2px !important;
+}
+
+.supabase-auth-ui_ui-label {
+  font-family: "Gabarito", sans-serif !important;
+  color: var(--custom-color-brand) !important;
+}
