@@ -21,7 +21,7 @@ export async function deleteActivity(formData) {
   }
 
   const { error } = await supabase
-    .from("watches")
+    .from("activities")
     .delete()
     .match({ id: watchId, user_id: user.id });
 

@@ -13,13 +13,13 @@ export default async function WatchList() {
   } = await supabase.auth.getSession();
 
   const user = session?.user;
-  const { data: watches, error } = await supabase
-    .from("watches")
+  const { data: activities, error } = await supabase
+    .from("activities")
     .select("*")
     .eq("user_id", user.id)
     .order("title", { ascending: true });
 
-  if (error) console.error("Error fetching watches");
+  if (error) console.error("Error fetching activities");
 
   console.log(user);
 
@@ -105,9 +105,9 @@ export default async function WatchList() {
                             ></path>
                           </svg>
 
-                          {watches && (
+                          {activities && (
                             <span className="text-gray-800">
-                              Total activities: {watches.length}
+                              Total activities: {activities.length}
                             </span>
                           )}
                         </li>
@@ -115,7 +115,7 @@ export default async function WatchList() {
                         <form action="/auth/signout" method="post">
                           <button
                             type="submit"
-                            className="bg-[var(--custom-color-secondary)] shadow  hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-[30px]"
+                            className="bg-[var(--custom-color-secondary)] shadow  hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-[30px] w-full"
                           >
                             Sign out
                           </button>
@@ -130,8 +130,8 @@ export default async function WatchList() {
         </div>
         <ActivityForm />
         <div className="mt-10">
-          {watches && watches.length > 0 ? (
-            watches.map((watch) => (
+          {activities && activities.length > 0 ? (
+            activities.map((watch) => (
               <div
                 key={watch.id}
                 className="flex justify-between items-center gap-[20px] md:gap-[30px] flex-col md:flex-row mb-4 p-4 bg-[var(--custom-color-secondary)] shadow"
@@ -189,7 +189,7 @@ export default async function WatchList() {
           )}
         </div>
         <div className="mt-6">
-          <DatePicker activities={watches} />
+          <DatePicker activities={activities} />
         </div>
       </div>
     </div>

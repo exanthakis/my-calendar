@@ -1,4 +1,4 @@
-create table watches {
+create table activities {
   id serial primary key,
   user_id uuid references auth.users not null,
   brand text,
@@ -8,16 +8,16 @@ create table watches {
   updated_at timestamp with time zone
 }
 
-alter table watches enable row level security;
+alter table activities enable row level security;
 
-create policy "Users can view their own watches." on watches
+create policy "Users can view their own activities." on activities
 for select using (auth.uid() = user_id);
 
-create policy "Users can add new watches." on watches
+create policy "Users can add new activities." on activities
 for insert with check (auth.uid() = user_id);
 
-create policy "Users can update their own watches." on watches
+create policy "Users can update their own activities." on activities
 for update using (auth.uid() = user_id);
 
-create policy "Users can delete their own watches." on watches
+create policy "Users can delete their own activities." on activities
 for delete using (auth.uid() = user_id); 

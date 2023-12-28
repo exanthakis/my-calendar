@@ -22,7 +22,7 @@ export async function addActivity(formData) {
     return;
   }
 
-  const { data, error } = await supabase.from("watches").insert([
+  const { data, error } = await supabase.from("activities").insert([
     {
       description,
       title,

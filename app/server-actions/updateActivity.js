@@ -26,7 +26,7 @@ export async function updateActivity(formData) {
   }
 
   const { data, error } = await supabase
-    .from("watches")
+    .from("activities")
     .update({
       description,
       title,
