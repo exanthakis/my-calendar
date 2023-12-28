@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         Yellowtail: ["Yellowtail", "serif"],
+        JosefinSans: ["Josefin Sans", "serif"],
         Gabarito: ["Gabarito", "serif"],
       },
     },

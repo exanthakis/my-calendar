@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Gabarito&family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gabarito&family=Josefin+Sans&family=Yellowtail&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -24,6 +24,10 @@
   background-color: var(--custom-color-brand) !important;
   border-color: inherit !important;
   border-radius: 30px !important;
+}
+
+.c-bOcPnF-cmFMMs-color-primary:hover {
+  background-color: var(--custom-color-secondary) !important;
 }
 
 .supabase-auth-ui_ui-button.c-bOcPnF-iwjZXY-color-default,
