@@ -21,8 +21,6 @@ function classNames(...classes) {
 }
 
 export default function DatePicker({ activities }) {
-  console.log("activities from datePicker component", activities);
-
   const today = startOfToday();
   const [selectedDay, setSelectedDay] = useState(today);
   const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
