@@ -29,14 +29,14 @@ export default async function WatchList() {
   return (
     <div className="min-h-screen bg-[--custom-color-brand] text-gray-300">
       <div className="container mx-auto p-6 sm:p-12">
-        <div className="flex justify-between items-start relative">
-          <h1 className="font-Yellowtail text-5xl md:text-6xl font-extrabold pb-12">
+        <div className="flex justify-center md:justify-between items-center md:items-start relative gap-5  flex-col md:flex-row pb-12">
+          <h1 className="font-Yellowtail text-5xl md:text-6xl font-extrabold ">
             My App List
           </h1>
 
           {user && user.user_metadata && (
             <>
-              <ul className="absolute flex flex-col gap-2 max-w-[280px] bg-white rounded-lg right-0 top-0">
+              <ul className="relative md:absolute flex gap-2 max-w-[280px] bg-white rounded-lg md:right-0 md:top-0">
                 <li>
                   <details className="group">
                     <summary className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
