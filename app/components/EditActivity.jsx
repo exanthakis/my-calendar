@@ -8,7 +8,6 @@ export default function EditActivity({ activity }) {
   const [formData, setFormData] = useState({
     title: activity.title,
     description: activity.description,
-    referenceNumber: activity.reference_number,
     startDate: activity.startDate,
     endDate: activity.endDate,
   });
@@ -78,22 +77,6 @@ export default function EditActivity({ activity }) {
                   id="description"
                   name="description"
                   value={formData.description}
-                  onChange={handleChange}
-                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500 outline-none"
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="referenceNumber"
-                  className="block text-gray-300 mb-2"
-                >
-                  Reference Number
-                </label>
-                <input
-                  type="text"
-                  id="referenceNumber"
-                  name="referenceNumber"
-                  value={formData.referenceNumber}
                   onChange={handleChange}
                   className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500 outline-none"
                 />

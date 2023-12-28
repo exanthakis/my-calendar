@@ -6,7 +6,6 @@ import { cookies } from "next/headers";
 export async function addActivity(formData) {
   const description = formData.get("description");
   const title = formData.get("title");
-  const referenceNumber = formData.get("referenceNumber");
   const startDate = formData.get("startDate");
   const endDate = formData.get("endDate");
 
@@ -26,7 +25,6 @@ export async function addActivity(formData) {
     {
       description,
       title,
-      reference_number: referenceNumber,
       startDate,
       endDate,
       user_id: user.id,

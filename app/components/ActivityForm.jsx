@@ -8,7 +8,6 @@ const ActivityForm = () => {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    referenceNumber: "",
     startDate: "",
     endDate: "",
   });
@@ -20,7 +19,6 @@ const ActivityForm = () => {
     setFormData({
       title: "",
       description: "",
-      referenceNumber: "",
       startDate: "",
       endDate: "",
     });
@@ -60,19 +58,6 @@ const ActivityForm = () => {
             onChange={handleChange}
             value={formData.description}
             required
-          />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="referenceNumber" className="block text-white mb-2">
-            Reference Number
-          </label>
-          <input
-            type="text"
-            id="referenceNumber"
-            name="referenceNumber"
-            className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
-            onChange={handleChange}
-            value={formData.referenceNumber}
           />
         </div>
         <div className="mb-4">
