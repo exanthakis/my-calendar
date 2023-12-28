@@ -10,7 +10,7 @@ export default function Activities({ activities }) {
   return (
     <>
       <div className="flex w-full justify-between items-center">
-        <h2 className="text-white text-2xl">Activities</h2>
+        <h2 className="text-white text-2xl">Activities: {activities.length}</h2>
         <label className="relative inline-flex items-center cursor-pointer">
           <input
             type="checkbox"
