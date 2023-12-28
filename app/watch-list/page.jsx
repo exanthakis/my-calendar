@@ -1,5 +1,6 @@
 import WatchForm from "../components/WatchForm";
 import EditWatch from "../components/EditWatch";
+import DatePicker from "../components/Datepicker";
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { deleteWatch } from "../server-actions/deleteWatch";
@@ -16,7 +17,7 @@ export default async function WatchList() {
     .from("watches")
     .select("*")
     .eq("user_id", user.id)
-    .order("brand", { ascending: true });
+    .order("title", { ascending: true });
 
   if (error) console.error("Error fetching watches");
 
@@ -47,7 +48,7 @@ export default async function WatchList() {
       <div className="container mx-auto p-6 sm:p-12">
         <div className="flex justify-center md:justify-between items-center md:items-start relative gap-5  flex-col md:flex-row pb-12">
           <h1 className="font-Yellowtail text-5xl md:text-6xl font-extrabold ">
-            My List
+            My Calendar
           </h1>
 
           {user && user.user_metadata && (
@@ -128,7 +129,7 @@ export default async function WatchList() {
           )}
         </div>
         <WatchForm />
-        <div className="mt-6">
+        <div className="mt-10">
           {watches && watches.length > 0 ? (
             watches.map((watch) => (
               <div
@@ -136,7 +137,8 @@ export default async function WatchList() {
                 className="flex justify-between items-center gap-[20px] md:gap-[30px] flex-col md:flex-row mb-4 p-4 bg-[var(--custom-color-secondary)] shadow"
               >
                 <h2 className="text-xl text-white mb-2">
-                  {watch.brand} - {watch.model}
+                  {watch.title} - {watch.description} - {watch.startDate} -{" "}
+                  {watch.endDate}
                 </h2>
                 <div className="flex space-x-2">
                   <form action={deleteWatch}>
@@ -185,6 +187,9 @@ export default async function WatchList() {
               Zero Items found!
             </div>
           )}
+        </div>
+        <div className="mt-6">
+          <DatePicker activities={watches} />
         </div>
       </div>
     </div>

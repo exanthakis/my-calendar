@@ -5,9 +5,11 @@ import { cookies } from "next/headers";
 
 export async function updateWatch(formData) {
   const id = formData.get("id");
-  const model = formData.get("model");
-  const brand = formData.get("brand");
+  const description = formData.get("description");
+  const title = formData.get("title");
   const referenceNumber = formData.get("referenceNumber");
+  const startDate = formData.get("startDate");
+  const endDate = formData.get("endDate");
 
   const cookieStore = cookies();
   const supabase = createServerComponentClient({ cookies: () => cookieStore });
@@ -24,9 +26,11 @@ export async function updateWatch(formData) {
   const { data, error } = await supabase
     .from("watches")
     .update({
-      model,
-      brand,
+      description,
+      title,
       reference_number: referenceNumber,
+      startDate,
+      endDate,
     })
     .match({ id, user_id: user.id });
 

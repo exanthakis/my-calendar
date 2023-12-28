@@ -6,9 +6,11 @@ import { updateWatch } from "../server-actions/updateWatch";
 export default function EditWatch({ watch }) {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
-    brand: watch.brand,
-    model: watch.model,
+    title: watch.title,
+    description: watch.description,
     referenceNumber: watch.reference_number,
+    startDate: watch.startDate,
+    endDate: watch.endDate,
   });
 
   const handleChange = (e) =>
@@ -52,27 +54,30 @@ export default function EditWatch({ watch }) {
             >
               <input type="hidden" name="id" value={watch.id} />
               <div className="mb-4">
-                <label htmlFor="brand" className="block text-gray-300 mb-2">
-                  Brand
+                <label htmlFor="title" className="block text-gray-300 mb-2">
+                  Title
                 </label>
                 <input
                   type="text"
-                  id="brand"
-                  name="brand"
-                  value={formData.brand}
+                  id="title"
+                  name="title"
+                  value={formData.title}
                   onChange={handleChange}
                   className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="model" className="block text-gray-300 mb-2">
-                  Model
+                <label
+                  htmlFor="description"
+                  className="block text-gray-300 mb-2"
+                >
+                  Description
                 </label>
                 <input
                   type="text"
-                  id="model"
-                  name="model"
-                  value={formData.model}
+                  id="description"
+                  name="description"
+                  value={formData.description}
                   onChange={handleChange}
                   className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
                 />
@@ -89,6 +94,32 @@ export default function EditWatch({ watch }) {
                   id="referenceNumber"
                   name="referenceNumber"
                   value={formData.referenceNumber}
+                  onChange={handleChange}
+                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="startDate" className="block text-gray-300 mb-2">
+                  Start Date
+                </label>
+                <input
+                  type="date"
+                  id="startDate"
+                  name="startDate"
+                  value={formData.startDate}
+                  onChange={handleChange}
+                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="endDate" className="block text-gray-300 mb-2">
+                  End Date
+                </label>
+                <input
+                  type="date"
+                  id="endDate"
+                  name="endDate"
+                  value={formData.endDate}
                   onChange={handleChange}
                   className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
                 />

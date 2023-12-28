@@ -13,7 +13,7 @@ export default function Home() {
                 Welcome to
               </h1>
               <h1 className="font-Yellowtail text-5xl md:text-6xl font-extrabold text-[#152B32] pb-12">
-                My List
+                My Calendar
               </h1>
               <AuthForm />
             </div>
