@@ -7,18 +7,29 @@
 :root {
   --custom-color: #fff;
   --custom-color-brand: #152b32;
+  --custom-color-secondary: #0d1c20;
+  --custom-color-blue: #0c8bd5;
+  --custom-color-red: #f44336;
+  --custom-font-family: "Gabarito", sans-serif;
+}
+
+* {
+  color: var(--custom-color);
+  font-family: var(--custom-font-family);
+  box-sizing: border-box;
 }
 
 .c-bOcPnF-cmFMMs-color-primary {
-  font-family: "Gabarito", sans-serif !important;
+  font-family: var(--custom-font-family) !important;
   background-color: var(--custom-color-brand) !important;
   border-color: inherit !important;
   border-radius: 30px !important;
 }
 
 .supabase-auth-ui_ui-button.c-bOcPnF-iwjZXY-color-default,
-.supabase-auth-ui_ui-input {
-  font-family: "Gabarito", sans-serif !important;
+.supabase-auth-ui_ui-input,
+input {
+  font-family: var(--custom-font-family) !important;
   background-color: var(--custom-color) !important;
   color: var(--custom-color-brand) !important;
   border-color: var(--custom-color-brand) !important;
@@ -26,7 +37,11 @@
   border-width: 2px !important;
 }
 
+input {
+  padding: 10px 20px !important;
+}
+
 .supabase-auth-ui_ui-label {
-  font-family: "Gabarito", sans-serif !important;
+  font-family: var(--custom-font-family) !important;
   color: var(--custom-color-brand) !important;
 }

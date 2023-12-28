@@ -2,7 +2,7 @@ import { addWatch } from "../server-actions/addWatch";
 
 const WatchForm = () => {
   return (
-    <form action={addWatch} className="mb-6">
+    <form action={addWatch} className="mb-9">
       <div className="mb-4">
         <label htmlFor="brand" className="block text-white mb-2">
           Brand
@@ -40,7 +40,7 @@ const WatchForm = () => {
       </div>
       <button
         type="submit"
-        className="bg-gray-600 hover:bg-gray-300 text-white hover:text-black font-bold py-2 px-4 rounded"
+        className="bg-gray-600 hover:bg-gray-300 text-white hover:text-black font-bold py-2 px-4 rounded-[30px]"
       >
         Add Watch
       </button>
