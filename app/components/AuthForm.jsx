@@ -47,6 +47,7 @@ export default function AuthForm() {
         providers={["google", "github"]}
         redirectTo="http://localhost:3000/auth/callback"
         appearance={{ theme: ThemeSupa }}
+        theme="dark"
       />
     </>
   );
