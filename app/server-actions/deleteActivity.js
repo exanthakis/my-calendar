@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
 export async function deleteActivity(formData) {
-  const watchId = formData.get("id");
+  const activityId = formData.get("id");
 
   const cookieStore = cookies();
   const supabase = createServerComponentClient({ cookies: () => cookieStore });
@@ -23,7 +23,7 @@ export async function deleteActivity(formData) {
   const { error } = await supabase
     .from("activities")
     .delete()
-    .match({ id: watchId, user_id: user.id });
+    .match({ id: activityId, user_id: user.id });
 
   if (error) {
     console.error("Error deleting data", error);

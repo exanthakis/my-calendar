@@ -19,12 +19,6 @@ export default async function WatchList() {
 
   if (error) console.error("Error fetching activities");
 
-  console.log(user);
-
-  if (user && user.user_metadata) {
-    console.log(user.user_metadata.full_name);
-  }
-
   const userIcon = () => {
     return (
       <svg

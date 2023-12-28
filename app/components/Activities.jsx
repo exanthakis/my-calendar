@@ -11,7 +11,7 @@ export default function Activities({ activities }) {
     <>
       <div className="flex w-full justify-between items-center">
         <h2 className="text-white text-2xl">Activities</h2>
-        <label className="relative inline-flex items-center mb-5 cursor-pointer">
+        <label className="relative inline-flex items-center cursor-pointer">
           <input
             type="checkbox"
             onClick={() => setIsCalendar(!isCalendar)}
@@ -29,18 +29,18 @@ export default function Activities({ activities }) {
         ) : (
           <>
             {activities && activities.length > 0 ? (
-              activities.map((watch) => (
+              activities.map((activity) => (
                 <div
-                  key={watch.id}
+                  key={activity.id}
                   className="flex justify-between items-center gap-[20px] md:gap-[30px] flex-col md:flex-row mb-4 p-4 bg-[var(--custom-color-secondary)] shadow"
                 >
                   <h2 className="text-xl text-white mb-2">
-                    {watch.title} - {watch.description} - {watch.startDate} -{" "}
-                    {watch.endDate}
+                    {activity.title} - {activity.description} -{" "}
+                    {activity.startDate} - {activity.endDate}
                   </h2>
                   <div className="flex space-x-2">
                     <form action={deleteActivity}>
-                      <input type="hidden" name="id" value={watch.id} />
+                      <input type="hidden" name="id" value={activity.id} />
                       <button
                         type="submit"
                         className="flex justify-between items-center gap-2 bg-[var(--custom-color-red)] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-[30px]"
@@ -62,7 +62,7 @@ export default function Activities({ activities }) {
                         Delete
                       </button>
                     </form>
-                    <EditActivity watch={watch} />
+                    <EditActivity activity={activity} />
                   </div>
                 </div>
               ))

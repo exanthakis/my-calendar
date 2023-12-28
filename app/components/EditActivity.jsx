@@ -3,14 +3,14 @@
 import { useState } from "react";
 import { updateActivity } from "../server-actions/updateActivity";
 
-export default function EditActivity({ watch }) {
+export default function EditActivity({ activity }) {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
-    title: watch.title,
-    description: watch.description,
-    referenceNumber: watch.reference_number,
-    startDate: watch.startDate,
-    endDate: watch.endDate,
+    title: activity.title,
+    description: activity.description,
+    referenceNumber: activity.reference_number,
+    startDate: activity.startDate,
+    endDate: activity.endDate,
   });
 
   const handleChange = (e) =>
@@ -52,7 +52,7 @@ export default function EditActivity({ watch }) {
               onSubmit={() => setShowModal(false)}
               className="mt-4"
             >
-              <input type="hidden" name="id" value={watch.id} />
+              <input type="hidden" name="id" value={activity.id} />
               <div className="mb-4">
                 <label htmlFor="title" className="block text-gray-300 mb-2">
                   Title
