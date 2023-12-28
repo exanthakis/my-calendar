@@ -42,7 +42,7 @@ const WatchForm = () => {
         type="submit"
         className="bg-gray-600 hover:bg-gray-300 text-white hover:text-black font-bold py-2 px-4 rounded-[30px]"
       >
-        Add Watch
+        Add Item
       </button>
     </form>
   );

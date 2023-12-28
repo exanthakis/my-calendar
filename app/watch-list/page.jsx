@@ -31,7 +31,7 @@ export default async function WatchList() {
       <div className="container mx-auto p-6 sm:p-12">
         <div className="flex justify-center md:justify-between items-center md:items-start relative gap-5  flex-col md:flex-row pb-12">
           <h1 className="font-Yellowtail text-5xl md:text-6xl font-extrabold ">
-            My App List
+            My List
           </h1>
 
           {user && user.user_metadata && (
