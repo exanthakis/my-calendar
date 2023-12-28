@@ -26,8 +26,24 @@ export default async function WatchList() {
     console.log(user.user_metadata.full_name);
   }
 
+  const userIcon = () => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="#152b32"
+        className="w-6 h-6"
+      >
+        <path
+          fillRule="evenodd"
+          d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5.5-2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a5.99 5.99 0 0 0-4.793 2.39A6.483 6.483 0 0 0 10 16.5a6.483 6.483 0 0 0 4.793-2.11A5.99 5.99 0 0 0 10 12Z"
+          clipRule="evenodd"
+        />
+      </svg>
+    );
+  };
   return (
-    <div className="min-h-screen bg-[--custom-color-brand] text-gray-300">
+    <div className="min-h-screen bg-[var(--custom-color-brand)] text-gray-300">
       <div className="container mx-auto p-6 sm:p-12">
         <div className="flex justify-center md:justify-between items-center md:items-start relative gap-5  flex-col md:flex-row pb-12">
           <h1 className="font-Yellowtail text-5xl md:text-6xl font-extrabold ">
@@ -36,16 +52,20 @@ export default async function WatchList() {
 
           {user && user.user_metadata && (
             <>
-              <ul className="relative md:absolute flex gap-2 max-w-[280px] bg-white rounded-lg md:right-0 md:top-0">
+              <ul className="relative md:absolute flex gap-2 max-w-[280px] bg-white rounded-lg md:right-0 md:top-0 shadow-lg">
                 <li>
                   <details className="group">
                     <summary className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
                       <span className="flex gap-2">
-                        <img
-                          className="w-6 h-6 rounded-full"
-                          src={user.user_metadata.avatar_url}
-                          alt="avatar photo"
-                        />
+                        {user.user_metadata.avatar_url ? (
+                          <img
+                            className="w-6 h-6 rounded-full"
+                            src={user.user_metadata.avatar_url}
+                            alt="avatar photo"
+                          />
+                        ) : (
+                          userIcon()
+                        )}
 
                         <span className="text-gray-800">
                           {user.user_metadata.full_name}
@@ -56,7 +76,7 @@ export default async function WatchList() {
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
-                        fill="currentColor"
+                        fill="#152b32"
                         viewBox="0 0 16 16"
                       >
                         <path
@@ -66,15 +86,15 @@ export default async function WatchList() {
                       </svg>
                     </summary>
 
-                    <article className="px-4 pb-4">
-                      <ul className="flex flex-col gap-4 pl-2 mt-4">
+                    <article className="px-4 pb-4 pl-2">
+                      <ul className="flex flex-col gap-4 mt-4">
                         <li className="flex gap-2">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth="1.5"
-                            stroke="currentColor"
+                            stroke="#152b32"
                             className="w-6 h-6"
                           >
                             <path
@@ -94,7 +114,7 @@ export default async function WatchList() {
                         <form action="/auth/signout" method="post">
                           <button
                             type="submit"
-                            className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+                            className="bg-[var(--custom-color-secondary)] shadow  hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-[30px]"
                           >
                             Sign out
                           </button>
