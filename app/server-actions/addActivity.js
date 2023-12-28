@@ -3,7 +3,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
-export async function addWatch(formData) {
+export async function addActivity(formData) {
   const description = formData.get("description");
   const title = formData.get("title");
   const referenceNumber = formData.get("referenceNumber");
@@ -18,7 +18,7 @@ export async function addWatch(formData) {
   const user = session?.user;
 
   if (!user) {
-    console.error("User is not authenticated within addWatch server action");
+    console.error("User is not authenticated within addActivity server action");
     return;
   }
 
@@ -38,7 +38,7 @@ export async function addWatch(formData) {
     return;
   }
 
-  revalidatePath("/watch-list");
+  revalidatePath("/my-calendar");
 
   return { message: "Success" };
 }

@@ -1,9 +1,9 @@
-import WatchForm from "../components/WatchForm";
-import EditWatch from "../components/EditWatch";
+import ActivityForm from "../components/ActivityForm";
+import EditActivity from "../components/EditActivity";
 import DatePicker from "../components/Datepicker";
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { deleteWatch } from "../server-actions/deleteWatch";
+import { deleteActivity } from "../server-actions/deleteActivity";
 
 export default async function WatchList() {
   const cookieStore = cookies();
@@ -107,7 +107,7 @@ export default async function WatchList() {
 
                           {watches && (
                             <span className="text-gray-800">
-                              Total watches: {watches.length}
+                              Total activities: {watches.length}
                             </span>
                           )}
                         </li>
@@ -128,7 +128,7 @@ export default async function WatchList() {
             </>
           )}
         </div>
-        <WatchForm />
+        <ActivityForm />
         <div className="mt-10">
           {watches && watches.length > 0 ? (
             watches.map((watch) => (
@@ -141,7 +141,7 @@ export default async function WatchList() {
                   {watch.endDate}
                 </h2>
                 <div className="flex space-x-2">
-                  <form action={deleteWatch}>
+                  <form action={deleteActivity}>
                     <input type="hidden" name="id" value={watch.id} />
                     <button
                       type="submit"
@@ -164,7 +164,7 @@ export default async function WatchList() {
                       Delete
                     </button>
                   </form>
-                  <EditWatch watch={watch} />
+                  <EditActivity watch={watch} />
                 </div>
               </div>
             ))

@@ -3,7 +3,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
-export async function updateWatch(formData) {
+export async function updateActivity(formData) {
   const id = formData.get("id");
   const description = formData.get("description");
   const title = formData.get("title");
@@ -19,7 +19,9 @@ export async function updateWatch(formData) {
   const user = session?.user;
 
   if (!user) {
-    console.error("User is not authenticated within updateWatch server action");
+    console.error(
+      "User is not authenticated within updateActivity server action"
+    );
     return;
   }
 
@@ -39,7 +41,7 @@ export async function updateWatch(formData) {
     return;
   }
 
-  revalidatePath("/watch-list");
+  revalidatePath("/my-calendar");
 
   return { message: "Success" };
 }

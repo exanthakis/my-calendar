@@ -3,7 +3,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
-export async function deleteWatch(formData) {
+export async function deleteActivity(formData) {
   const watchId = formData.get("id");
 
   const cookieStore = cookies();
@@ -14,7 +14,9 @@ export async function deleteWatch(formData) {
   const user = session?.user;
 
   if (!user) {
-    console.error("User is not authenticated within deleteWatch server action");
+    console.error(
+      "User is not authenticated within deleteActivity server action"
+    );
     return;
   }
 
@@ -28,7 +30,7 @@ export async function deleteWatch(formData) {
     return;
   }
 
-  revalidatePath("/watch-list");
+  revalidatePath("/my-calendar");
 
   return { message: "Success" };
 }

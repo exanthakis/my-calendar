@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { updateWatch } from "../server-actions/updateWatch";
+import { updateActivity } from "../server-actions/updateActivity";
 
-export default function EditWatch({ watch }) {
+export default function EditActivity({ watch }) {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     title: watch.title,
@@ -48,7 +48,7 @@ export default function EditWatch({ watch }) {
               &times;
             </span>
             <form
-              action={updateWatch}
+              action={updateActivity}
               onSubmit={() => setShowModal(false)}
               className="mt-4"
             >
@@ -128,7 +128,7 @@ export default function EditWatch({ watch }) {
                 type="submit"
                 className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
-                Update Watch
+                Update Activity
               </button>
             </form>
           </div>

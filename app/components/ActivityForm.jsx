@@ -1,8 +1,8 @@
-import { addWatch } from "../server-actions/addWatch";
+import { addActivity } from "../server-actions/addActivity";
 
-const WatchForm = () => {
+const ActivityForm = () => {
   return (
-    <form action={addWatch} className="mb-9">
+    <form action={addActivity} className="mb-9">
       <div className="mb-4">
         <label htmlFor="title" className="block text-white mb-2">
           Title
@@ -72,4 +72,4 @@ const WatchForm = () => {
   );
 };
 
-export default WatchForm;
+export default ActivityForm;

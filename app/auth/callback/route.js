@@ -12,5 +12,5 @@ export async function GET(req) {
 
   if (code) await supabase.auth.exchangeCodeForSession(code);
 
-  return NextResponse.redirect(new URL("/watch-list", req.url));
+  return NextResponse.redirect(new URL("/my-calendar", req.url));
 }
