@@ -63,7 +63,7 @@ export default function EditActivity({ watch }) {
                   name="title"
                   value={formData.title}
                   onChange={handleChange}
-                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
+                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500 outline-none"
                 />
               </div>
               <div className="mb-4">
@@ -79,7 +79,7 @@ export default function EditActivity({ watch }) {
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
-                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
+                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500 outline-none"
                 />
               </div>
               <div className="mb-4">
@@ -95,7 +95,7 @@ export default function EditActivity({ watch }) {
                   name="referenceNumber"
                   value={formData.referenceNumber}
                   onChange={handleChange}
-                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
+                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500 outline-none"
                 />
               </div>
               <div className="mb-4">
@@ -108,7 +108,7 @@ export default function EditActivity({ watch }) {
                   name="startDate"
                   value={formData.startDate}
                   onChange={handleChange}
-                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
+                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500 outline-none"
                 />
               </div>
               <div className="mb-4">
@@ -121,7 +121,7 @@ export default function EditActivity({ watch }) {
                   name="endDate"
                   value={formData.endDate}
                   onChange={handleChange}
-                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
+                  className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500 outline-none"
                 />
               </div>
               <button

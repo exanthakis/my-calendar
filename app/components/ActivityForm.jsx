@@ -11,7 +11,7 @@ const ActivityForm = () => {
           type="text"
           id="title"
           name="title"
-          className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white"
+          className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
           required
         />
       </div>
@@ -23,7 +23,7 @@ const ActivityForm = () => {
           type="text"
           id="description"
           name="description"
-          className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white"
+          className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
           required
         />
       </div>
@@ -35,7 +35,7 @@ const ActivityForm = () => {
           type="text"
           id="referenceNumber"
           name="referenceNumber"
-          className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white"
+          className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
         />
       </div>
       <div className="mb-4">
@@ -46,7 +46,7 @@ const ActivityForm = () => {
           type="date"
           id="startDate"
           name="startDate"
-          className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white"
+          className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
         />
       </div>
       <div className="mb-4">
@@ -57,7 +57,7 @@ const ActivityForm = () => {
           type="date"
           id="endDate"
           name="endDate"
-          className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white"
+          className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
         />
       </div>
       <div className="mb-4 mt-6">
