@@ -8,8 +8,12 @@ export default function EditActivity({ activity }) {
   const [formData, setFormData] = useState({
     title: activity.title,
     description: activity.description,
-    startDate: activity.startDate.split("+")[0],
-    endDate: activity.endDate.split("+")[0],
+    startDate: activity.startDate
+      ? activity.startDate.split("+")[0]
+      : activity.startDate,
+    endDate: activity.endDate
+      ? activity.endDate.split("+")[0]
+      : activity.endDate,
   });
 
   const handleChange = (e) =>
