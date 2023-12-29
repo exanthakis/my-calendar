@@ -8,8 +8,8 @@ export default function EditActivity({ activity }) {
   const [formData, setFormData] = useState({
     title: activity.title,
     description: activity.description,
-    startDate: activity.startDate,
-    endDate: activity.endDate,
+    startDate: activity.startDate.split("+")[0],
+    endDate: activity.endDate.split("+")[0],
   });
 
   const handleChange = (e) =>
@@ -86,7 +86,7 @@ export default function EditActivity({ activity }) {
                   Start Date
                 </label>
                 <input
-                  type="date"
+                  type="datetime-local"
                   id="startDate"
                   name="startDate"
                   value={formData.startDate}
@@ -99,7 +99,7 @@ export default function EditActivity({ activity }) {
                   End Date
                 </label>
                 <input
-                  type="date"
+                  type="datetime-local"
                   id="endDate"
                   name="endDate"
                   value={formData.endDate}

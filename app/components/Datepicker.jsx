@@ -14,6 +14,7 @@ import {
   parseISO,
   startOfToday,
 } from "date-fns";
+import moment from "moment";
 import { useState } from "react";
 
 function classNames(...classes) {
@@ -186,8 +187,8 @@ export default function DatePicker({ activities }) {
 }
 
 function Meeting({ meeting }) {
-  let startDateTime = parseISO(meeting.startDate);
-  let endDateTime = parseISO(meeting.endDate);
+  let startDateTime = moment.utc(meeting.startDate).format("DD/MM, hh:mm a");
+  let endDateTime = moment.utc(meeting.endDate).format("DD/MM, hh:mm a");
 
   return (
     <li className="flex items-center px-4 py-2 space-x-4 group rounded-xl  hover:bg-[--custom-color-brand]">
@@ -210,13 +211,8 @@ function Meeting({ meeting }) {
         <p className="text-white">{meeting.title}</p>
         <p className="text-white">{meeting.description}</p>
         <p className="mt-0.5">
-          <time dateTime={meeting.startDate}>
-            {format(startDateTime, "h:mm a")}
-          </time>{" "}
-          -{" "}
-          <time dateTime={meeting.endDate}>
-            {format(endDateTime, "h:mm a")}
-          </time>
+          <time dateTime={meeting.startDate}>{startDateTime}</time> -{" "}
+          <time dateTime={meeting.endDate}>{endDateTime}</time>
         </p>
       </div>
     </li>

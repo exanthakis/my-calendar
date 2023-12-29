@@ -4,6 +4,7 @@ import { deleteActivity } from "../server-actions/deleteActivity";
 import EditActivity from "../components/EditActivity";
 import DatePicker from "../components/Datepicker";
 import { useState } from "react";
+import moment from "moment";
 
 export default function Activities({ activities }) {
   const [isCalendar, setIsCalendar] = useState(true);
@@ -36,7 +37,8 @@ export default function Activities({ activities }) {
                 >
                   <h2 className="text-xl text-white mb-2">
                     {activity.title} - {activity.description} -{" "}
-                    {activity.startDate} - {activity.endDate}
+                    {moment.utc(activity.startDate).format("DD/MM, hh:mm a")} -{" "}
+                    {moment.utc(activity.endDate).format("DD/MM, hh:mm a")}
                   </h2>
                   <div className="flex space-x-2">
                     <form action={deleteActivity}>

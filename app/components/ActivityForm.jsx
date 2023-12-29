@@ -65,7 +65,7 @@ const ActivityForm = () => {
             Task Start Date
           </label>
           <input
-            type="date"
+            type="datetime-local"
             id="startDate"
             name="startDate"
             className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
@@ -79,7 +79,7 @@ const ActivityForm = () => {
             Task End Date
           </label>
           <input
-            type="date"
+            type="datetime-local"
             id="endDate"
             name="endDate"
             className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
