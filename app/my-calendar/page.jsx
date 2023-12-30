@@ -2,6 +2,7 @@ import ActivityForm from "../components/ActivityForm";
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import Activities from "../components/Activities";
+import Footer from "../components/Footer";
 
 export default async function WatchList() {
   const cookieStore = cookies();
@@ -122,6 +123,7 @@ export default async function WatchList() {
         </div>
         <ActivityForm />
         <Activities activities={activities} />
+        <Footer />
       </div>
     </div>
   );
