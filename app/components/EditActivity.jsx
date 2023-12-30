@@ -25,7 +25,7 @@ export default function EditActivity({ activity }) {
     <div>
       <button
         onClick={() => setShowModal(true)}
-        className="flex justify-between items-center gap-2 bg-[var(--custom-color-blue)] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-[30px]"
+        className="flex justify-between items-center gap-2 bg-[var(--btn-edit-color)] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-[30px]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -44,8 +44,8 @@ export default function EditActivity({ activity }) {
         Edit
       </button>
       {showModal && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center px-4">
-          <div className="modal-content bg-gray-900 p-6 rounded-lg w-full max-w-md">
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center px-4 z-10">
+          <div className="modal-content bg-[var(--custom-color-secondary)] p-6 rounded-lg w-full max-w-md z-30">
             <span
               className="close text-white text-xl leading-none hover:text-gray-300 cursor-pointer float-right"
               onClick={() => setShowModal(false)}
@@ -113,12 +113,14 @@ export default function EditActivity({ activity }) {
                   className="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-blue-500 outline-none"
                 />
               </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Update Activity
-              </button>
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  className="w-full bg-[var(--btn-edit-color)] text-white font-bold py-2 px-4 rounded-[30px]"
+                >
+                  Update Activity
+                </button>
+              </div>
             </form>
           </div>
         </div>
