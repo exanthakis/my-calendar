@@ -1,6 +1,7 @@
 "use client";
 
 import { addActivity } from "../server-actions/addActivity";
+import { addActivitytoGoogle } from "../server-actions/addActivitytoGoogle";
 import { useState } from "react";
 
 const ActivityForm = () => {
@@ -15,6 +16,17 @@ const ActivityForm = () => {
   async function onAdd(formData) {
     const res = await addActivity(formData);
 
+    setIsSuccessful(res.message === "Success" ? true : false);
+    setFormData({
+      title: "",
+      description: "",
+      startDate: "",
+      endDate: "",
+    });
+  }
+
+  async function onGoogleAdd(formData) {
+    const res = await addActivitytoGoogle(formData);
     setIsSuccessful(res.message === "Success" ? true : false);
     setFormData({
       title: "",
@@ -94,6 +106,69 @@ const ActivityForm = () => {
             className="bg-gray-600 hover:bg-gray-300 text-white hover:text-black font-bold py-2 px-4 rounded-[30px] transition ease-in-out delay-150 hover:scale-110 duration-300"
           >
             Add Activity
+          </button>
+        </div>
+      </form>
+
+      <form action={onGoogleAdd}>
+        <div className="mb-4 hidden">
+          <label htmlFor="titleGoogle" className="block text-white mb-2">
+            Title
+          </label>
+          <input
+            type="text"
+            id="titleGoogle"
+            name="titleGoogle"
+            className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
+            value={formData.title}
+            readOnly
+          />
+        </div>
+        <div className="mb-4 hidden">
+          <label htmlFor="descriptionGoogle" className="block text-white mb-2">
+            DescriptionGoogle
+          </label>
+          <input
+            type="text"
+            id="descriptionGoogle"
+            name="descriptionGoogle"
+            className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
+            value={formData.description}
+            readOnly
+          />
+        </div>
+        <div className="mb-4 hidden">
+          <label htmlFor="startDateGoogle" className="block text-white mb-2">
+            Task Start Date
+          </label>
+          <input
+            type="datetime-local"
+            id="startDateGoogle"
+            name="startDateGoogle"
+            className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
+            value={formData.startDate}
+            readOnly
+          />
+        </div>
+        <div className="mb-4 hidden">
+          <label htmlFor="endDateGoogle" className="block text-white mb-2">
+            Task End Date
+          </label>
+          <input
+            type="datetime-local"
+            id="endDateGoogle"
+            name="endDateGoogle"
+            className="shadow appearance-none border border-gray-600 bg-gray-700 rounded w-full py-2 px-3 text-white outline-none"
+            value={formData.endDate}
+            readOnly
+          />
+        </div>
+        <div className="mb-4 mt-6">
+          <button
+            type="submit"
+            className="bg-gray-600 hover:bg-gray-300 text-white hover:text-black font-bold py-2 px-4 rounded-[30px] transition ease-in-out delay-150 hover:scale-110 duration-300"
+          >
+            Insert Activity to Google Calendar
           </button>
         </div>
       </form>
