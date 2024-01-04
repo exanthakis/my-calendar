@@ -36,7 +36,7 @@ export async function addActivitytoGoogle(formData) {
   };
 
   console.log(event);
-  await fetch(
+  const data = await fetch(
     "https://www.googleapis.com/calendar/v3/calendars/primary/events",
     {
       method: "POST",
@@ -50,9 +50,18 @@ export async function addActivitytoGoogle(formData) {
       return data.json();
     })
     .then((data) => {
-      console.log(data);
-      console.log("Event created, check your Google Calendar!");
+      if (data.error) {
+        return data;
+      } else {
+        console.log(data);
+        console.log("Event created, check your Google Calendar!");
+      }
     });
+
+  if (data && data.error) {
+    console.log(data);
+    return { message: data.error.status };
+  }
 
   revalidatePath("/my-calendar");
 
