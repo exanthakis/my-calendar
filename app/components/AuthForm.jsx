@@ -14,7 +14,7 @@ export default function AuthForm() {
         view="magic_link"
         showLinks={false}
         providers={["google", "github"]}
-        redirectTo="http://localhost:3000/auth/callback"
+        redirectTo="https://my-calendar-smoky.vercel.app/auth/callback"
         appearance={{ theme: ThemeSupa }}
         theme="dark"
         providerScopes={{
