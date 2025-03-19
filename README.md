@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My-Calendar
 
-## Getting Started
+**[Live Website](https://my-calendar-smoky.vercel.app/)**
 
-First, run the development server:
+## 🚀 About
 
-```bash
+Calendar App is a modern and intuitive web application that allows users to manage their schedules efficiently. Users can sign in seamlessly using **Google**, **GitHub**, or a **Magic Link** and add notes for each date through an interactive calendar interface.
+
+### ✨ Features
+
+- **Secure Authentication** – Sign in via Google, GitHub, or Magic Link.
+- **Interactive Calendar** – Easily navigate and manage events.
+- **Add Notes** – Attach personalized notes to specific dates.
+- **Cloud-Based Storage** – Data is securely stored and retrieved using **Supabase**.
+- **Responsive UI** – Built with **Tailwind CSS** for a sleek and modern design.
+
+## 🛠 Tech Stack
+
+- **Next.js** – Server-side rendering and optimized performance.
+- **Tailwind CSS** – Modern and responsive styling.
+- **Supabase** – Authentication & database management.
+
+## 🚀 Installation & Setup
+
+To run the Calendar App locally, follow these steps:
+
+```sh
+# Clone the repository
+git clone https://github.com/your-username/my-calendar.git
+
+# Navigate to the project directory
+cd my-calendar
+
+# Install dependencies
+npm install
+
+# Create a .env.local file and add your Supabase credentials
+echo "NEXT_PUBLIC_SUPABASE_URL=your-supabase-url" > .env.local
+echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key" >> .env.local
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤝 Contributing
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Contributions are welcome! If you'd like to improve Calendar App, feel free to fork the repository, create a feature branch, and submit a pull request.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📜 License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License.
